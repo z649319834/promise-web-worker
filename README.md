@@ -2,7 +2,7 @@
 
 ## Why
 
-创建和使用[Web Workers]（https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers）有时会很麻烦。该插件旨在促进Web Worker 的使用。根据浏览器的兼容性对`web Worker`封装了一层 promise 封装,解决在不支持`web Worker`的浏览器下可能需要书写不同逻辑的可能。同时整理了创建`web Worker`对应的相关事件的消息通信,执行完会自动关闭 worker,通过链式调用获取处理结果。同时为了避免项目中使用`web Worker`需要考虑引用文件的同源策略限制以及 webpack 打包的麻烦，插件使用`URL.createObjectURL`对执行的逻辑函数生成一个 URL 对象，具体逻辑如下：
+创建和使用[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)有时会很麻烦。该插件旨在促进 Web Worker 的使用。根据浏览器的兼容性对`web Worker`封装了一层 promise 封装,解决在不支持`web Worker`的浏览器下可能需要书写不同逻辑的可能。同时整理了创建`web Worker`对应的相关事件的消息通信,执行完会自动关闭 worker,通过链式调用获取处理结果。同时为了避免项目中使用`web Worker`需要考虑引用文件的同源策略限制以及 webpack 打包的麻烦，插件使用`URL.createObjectURL`对执行的逻辑函数生成一个 URL 对象，具体逻辑如下：
 
 ```
 const URL = window.URL || window.webkitURL
