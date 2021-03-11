@@ -1,4 +1,4 @@
-# @zcz/promise-worker
+# promise-web-worker
 
 ## Why
 
@@ -16,18 +16,18 @@ const worker = new Worker(objectURL)
 ## How to install and use
 
 ```
-npm install @zcz/promise-worker
+npm install promise-web-worker
 
 or
 
-yarn add @zcz/promise-worker
+yarn add promise-web-worker
 
 ```
 
 Then:
 
 ```
-import PromiseWorker from '@zcz/promise-worker'
+import PromiseWorker from 'promise-web-worker'
 ```
 
 ## Options
