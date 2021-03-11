@@ -1,0 +1,37 @@
+{
+  "name": "@zcz/promise-worker",
+  "version": "1.0.0",
+  "description": "简化web worker使用的实用程序。使用promise包装一层，链式调用",
+  "main": "/dist/index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "NODE_ENV=production rm -rf dist && rollup -c",
+    "prepublishOnly": "yarn build",
+    "postpublish": "git push && git push origin --tags"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "keywords": [
+    "Web",
+    "Worker",
+    "Promise"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/z649319834/promise-worker.git"
+  },
+  "author": "zhongchengzuo",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}

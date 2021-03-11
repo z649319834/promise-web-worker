@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/dist/index.umd.js"></script>
+    <script>
+      console.log(11111)
+      PromiseWorker.run(
+        async function(id) {
+          return await fetch(
+            `https://resapi-dev.jiaoyanyun.com/web/baseItem/querySelectList?subjectId=1&gradeGroupId=1&examTypeId=${id}`
+          ).then(function(response) {
+            return response.json()
+          })
+        },
+        ['599dcce2998a6b40b1e38e8c600c0004']
+      )
+        .then(data => {
+          console.log('worker-fetch-success: ', data)
+        })
+        .catch(err => {
+          console.log('worker-fetch-error: ', err)
+        })
+
+      PromiseWorker.run(
+        function(len) {
+          console.log('len:', len)
+          const arr = []
+          for (let i = 0; i < len; i++) {
+            arr.push(i)
+          }
+          return arr
+        },
+        [1000]
+      )
+        .then(data => {
+          console.log('worker-success: ', data)
+          document.body.innerHTML =
+            document.body.innerHTML + '<br/><br/>' + data.join('-')
+        })
+        .catch(err => {
+          console.log('worker-error: ', err)
+        })
+      console.log(22222)
+    </script>
+  </body>
+</html>
