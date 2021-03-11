@@ -1,6 +1,6 @@
 {
   "name": "promise-web-worker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "简化web worker使用的实用程序。使用promise包装一层，链式调用",
   "main": "/dist/index.js",
   "scripts": {
